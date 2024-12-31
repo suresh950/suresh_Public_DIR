@@ -1,3 +1,15 @@
-- name: Gather all legacy facts
-  cisco.ios.ios_facts:
-    gather_subset: all
+---
+- name: Network Getting Started First Playbook
+  connection: network_cli
+  gather_facts: false
+  hosts: all
+  tasks:
+
+    - name: Get config for cisco device
+      ios_facts:
+        gather_subset: all
+
+    - name: Display the config
+      debug:
+        #msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+        msg: "{{ hostvars[inventory_hostname] }}"
