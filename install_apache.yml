@@ -1,8 +1,4 @@
 ---
-- name: all
-  become: true
-  task:
-
-  - name: install apache2 package
-    apt:
-      name: apache2
+- name: install apache2 package
+  apt:
+    name: apache2
