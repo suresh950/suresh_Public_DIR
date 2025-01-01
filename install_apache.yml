@@ -1,5 +1,5 @@
 ---
-- host: all
+- name: all
   become: true
   task:
 
