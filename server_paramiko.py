@@ -1,5 +1,4 @@
-import paramiko
-import time
+
 import subprocess
 import sys
 
@@ -9,7 +8,10 @@ def install_package(package):
 
 if __name__ == "__main__":
     install_package("paramiko")
-  
+
+import paramiko
+import time
+
 cli_command_list = ["df -h"]
 def login_to_switch(ip, user, passwd, successfull=None):
     ssh_client = paramiko.client.SSHClient()
