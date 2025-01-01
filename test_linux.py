@@ -1,5 +1,4 @@
 import paramiko
-import pandas as pd
 import time
 
 cli_command_list = ["df -h"]
