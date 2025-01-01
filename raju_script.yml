@@ -1,0 +1,11 @@
+---
+- name: Check Disk Space Usage
+  hosts: all
+  tasks:
+          - name: Disk usage from command module
+            shell:
+                 cmd: df --block-size 1G
+            register: home_disk_used
+ 
+          - debug:
+             var: home_disk_used.stdout_lines
