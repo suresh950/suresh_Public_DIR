@@ -33,7 +33,7 @@ def login_to_switch(ip, user, passwd, successfull=None):
         device_access.close()
         return True  # Indicate successful login
     except Exception as error:
-        print("error")
+        print(error)
         return False
 
 
