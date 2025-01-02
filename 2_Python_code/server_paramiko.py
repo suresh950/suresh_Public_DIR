@@ -32,7 +32,9 @@ def login_to_switch(ip, user, passwd, successfull=None):
         print(output.decode())
         device_access.close()
         return True  # Indicate successful login
-    except:
+    except Exception as error:
+        print("error")
         return False
+
 
 login_to_switch("devnetsandboxiosxe.cisco.com",user=username,passwd=passwd)
