@@ -9,8 +9,10 @@
 import paramiko
 import time
 import os
-username = os.environ.get('Username')
-passwd = os.environ.get('Password')
+# username = os.environ.get('Username')
+# passwd = os.environ.get('Password')
+username = input("username ")
+passwd = input("password ")
 cli_command_list = ["enable","terminal length 0","show Version"]
 def login_to_switch(ip, user, passwd, successfull=None):
     ssh_client = paramiko.client.SSHClient()
