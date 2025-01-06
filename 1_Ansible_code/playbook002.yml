@@ -1,0 +1,6 @@
+- name: Gather IOS facts
+  hosts: all
+  tasks:
+    - name: Collect IOS facts
+      cisco.ios.ios_facts:
+        gather_subset: all
