@@ -1,3 +1,4 @@
-- name: Gather all legacy facts
-  cisco.ios.ios_facts:
+# Gather all facts
+- cisco.iosxr.iosxr_facts:
     gather_subset: all
+    gather_network_resources: all
