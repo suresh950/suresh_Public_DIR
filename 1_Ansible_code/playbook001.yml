@@ -1,3 +1,6 @@
-- name: Gather all legacy facts
-  cisco.ios.ios_facts:
-    gather_subset: all
+- name: Gather IOS facts
+  hosts: switches
+  tasks:
+    - name: Collect IOS facts
+      cisco.ios.ios_facts:
+        gather_subset: all
