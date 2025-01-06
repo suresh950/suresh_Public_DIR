@@ -4,3 +4,8 @@
     - name: Collect IOS facts
       cisco.ios.ios_facts:
         gather_subset: all
+
+    - name: Gather only the config and default facts
+      cisco.ios.ios_facts:
+        gather_subset:
+          - config
