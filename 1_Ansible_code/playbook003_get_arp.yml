@@ -1,6 +1,6 @@
 ---
 - name: Get ARP info
-  host: all
+  hosts: all
   gather_facts: false
 
   tasks:
