@@ -1,0 +1,122 @@
+Ad hoc command
+ansible R2 -m raw -a "show version" -u cisco -k
+ansible R2 -m raw -a "show ip int br" -u cisco -k
+ansible routers -i ./myhosts -m raw -a "show version" -u cisco -k
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k | grep 'CHANGED\|flash0\|ROM: 3700 Software'
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k | grep 'CHANGED\|username'
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k | grep 'CHANGED\|username' > username.txt---->>> store the output in text file
+ansible all -i ./myhosts -m raw -a "show arp" -u cisco -k | grep 'CHANGED\|4924'
+
+NA IP ADDRESS:========================================
+nano /etc/network/interfaces
+auto eth0
+iface eth0 inet dhcp
+
+AGG-ACCESS:===========================================
+
+SW1:
+hostname SW1
+int vl1
+ no sh
+ ip add 192.168.122.61 255.255.255.0
+
+
+SW2:
+hostname SW2
+int vl1
+ no sh
+ ip add 192.168.122.62 255.255.255.0
+
+
+SW3:
+hostname SW3
+int vl1
+ no sh
+ ip add 192.168.122.63 255.255.255.0
+
+
+SW4:
+hostname SW4
+int vl1
+ no sh
+ ip add 192.168.122.64 255.255.255.0
+
+
+SW5:
+hostname SW5
+int vl1
+ no sh
+ ip add 192.168.122.65 255.255.255.0
+
+ALL SWITCHES:======================================
+usern cisco pas cisco
+usern cisco priv 15
+lin vty 0 4
+ tr i a
+ logi loc
+ exi
+ip domain-n netautomation.com
+
+cry key gen rsa
+1024
+
+NA CONFIG:========================================
+
+nano ansible.cfg
+
+[defaults]
+inventory = ./myhosts
+host_key_checking = false
+timeout = 15
+deprecation_warnings=False
+
+================================
+
+nano /etc/hosts
+
+192.168.122.61 SW1
+192.168.122.62 SW2
+192.168.122.63 SW3
+192.168.122.64 SW4
+192.168.122.65 SW5
+
+================================
+
+nano myhosts
+
+[agg]
+SW1
+SW2
+
+[access]
+SW3
+SW4
+SW5
+
+NA Appliance Verification:===
+ifconfig
+cat ansible.cfg
+cat myhosts
+cat /etc/hosts
+ansible --list-hosts all
+ansible --list-hosts routers
+ansible --list-hosts switches
+
+ping R2
+ssh cisco@R2
+
+AD HOC Commands:==============
+ansible R2 -m raw -a "show version" -u cisco -k
+ansible R3 -m raw -a "show ip ei nei" -u cisco -k
+ansible routers -i ./myhosts -m raw -a "sh ip ei nei" -u cisco -k
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k
+ansible all -i ./myhosts -m raw -a "show version" -u cisco -k | grep 'CHANGED\|flash0\|ROM: 3700 Software'
+ansible all -i ./myhosts -m raw -a "show run | i user" -u cisco -k | grep 'CHANGED\|username'
+ansible all -i ./myhosts -m raw -a "show run | i user" -u cisco -k | grep 'CHANGED\|username' (greaterthansign) username.txt
+ansible all -i ./myhosts -m raw -a "show arp" -u cisco -k
+ansible all -i ./myhosts -m raw -a "show arp" -u cisco -k | grep 'CHANGED\|4924'
+
+This is an Ansible Network Automation Cisco course where we teach network automation in gns3.  The big idea is to get something out there on ansible for network engineers and get automating with gns3 network automation ansible.  I will demonstrate how to set the gns3 network automation ip address and set up a gns3 network automation lab.  Those labs include gns3 network automation docker and gns3 network automation containe
+
+This is a video course for ansible network automation training designed for network engineers that are beginners with automation and programmability.  This ansible network automation tutorial will focus bringing up a gns3 network automation lab with the gns3 network automation appliance.
