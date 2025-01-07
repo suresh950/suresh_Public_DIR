@@ -1,0 +1,24 @@
+---
+- name: get CDP neighbour
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: show cdp neighbor
+      raw: "show version"
+      register: print_output1
+    - debug: var=print_output1.stdout_lines
+
+    - name: getting interface ip
+      raw: "show ip int br"
+      register: print_output2
+    - debug: var=print_output2.stdout_lines
+
+    - name: getting mac address table
+      raw: "show mac address-table"
+      register: print_output3
+    - debug: var=print_output.stdout_lines
+
+    - name: getting arp entry
+      raw: "show arp"
+      register: print_output4
+    - debug: var=print_output4.stdout_lines
