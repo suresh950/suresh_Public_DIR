@@ -1,0 +1,9 @@
+---
+- name: get MAC table
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: show mac address table command to be executed
+      raw: "show mac address-table"
+      register: mac_table
+    - debug: var=mac_table.stdout_lines
