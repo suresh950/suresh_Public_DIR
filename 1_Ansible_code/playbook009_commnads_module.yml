@@ -2,7 +2,7 @@
 - name: using commands module
   hosts: all
   gather_facts: false
-  connection: network_cli
+  connection: ansible.netcommon.network_cli
 
   tasks:
     - name: commands module is used next
