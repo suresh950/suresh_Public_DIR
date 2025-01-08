@@ -2,6 +2,7 @@
 - name: using commands module
   hosts: all
   gather_facts: false
+  connection: local
 
   tasks:
     - name: commands module is used next
