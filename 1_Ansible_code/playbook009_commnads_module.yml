@@ -3,7 +3,8 @@
   hosts: all
   gather_facts: false
   connection: ansible.netcommon.network_cli
-  ansible_network_os: cisco.ios.ios
+  vars:
+    ansible_network_os: cisco.ios
 
   tasks:
     - name: commands module is used next
