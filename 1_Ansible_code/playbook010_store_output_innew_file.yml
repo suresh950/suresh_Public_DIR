@@ -11,7 +11,7 @@
         commands:
           - show ip int brief
       register: my_output
-    - debug: var= my_output.stdout_lines
+    - debug: var=my_output.stdout_lines
 
     - name: save output to a file
       copy: content= "{{my_output.stdout[0]}}" dest="./testfiel.txt"
