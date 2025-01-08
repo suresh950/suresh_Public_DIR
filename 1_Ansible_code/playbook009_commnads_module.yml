@@ -1,0 +1,14 @@
+---
+- name: using commands module
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: commands module is used next
+      ios_command:
+        commands:
+          - show vlan
+          - show ip int br
+      register: get_output
+    - debug: var=get_output.stdout_lines
