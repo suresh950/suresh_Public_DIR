@@ -1,0 +1,17 @@
+---
+- name: this playbook will show how to store output in some txt file.
+  hosts: all
+  gather_facts: false
+  connection: ansible.netcommon.network_cli
+  vars:
+    ansible_network_os: cisco.ios.ios
+  tasks:
+    - name: run multiple command using commands module
+      ios_command:
+        commands:
+          - show ip int brief
+      register: my_output
+    - debug: var= my_output.stdout_lines
+
+    - name: save output to a file
+      copy: content= "{{my_output.stdout[0]}}" dest="./testfiel.txt"
