@@ -11,6 +11,8 @@ import time
 import os
 user1 = os.environ.get('Username')
 pass1 = os.environ.get('Password')
+R1= os.environ.get('Router')
+
 # username = input("username ")
 # passwd = input("password ")
 cli_command_list = ["enable","terminal length 0","show Version"]
@@ -41,5 +43,5 @@ def login_to_switch(ip, user, passwd, successfull=None):
         print(error)
         return False
 
-login_to_switch("devnetsandboxiosxe.cisco.com",user=user1,passwd=pass1)
+login_to_switch(ip = R1,user=user1,passwd=pass1)
 
