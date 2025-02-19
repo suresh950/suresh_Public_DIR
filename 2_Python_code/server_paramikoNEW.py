@@ -15,7 +15,7 @@ R1= os.environ.get('Router')
 
 # username = input("username ")
 # passwd = input("password ")
-cli_command_list = ["enable","terminal length 0","show Version"]
+cli_command_list = ["enable",pass1,"terminal length 0","show Version"]
 def login_to_switch(ip, user, passwd, successfull=None):
     ssh_client = paramiko.client.SSHClient()
     ssh_client.set_missing_host_key_policy(paramiko.client.AutoAddPolicy())
