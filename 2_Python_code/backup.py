@@ -41,7 +41,7 @@ def login_to_switch(ip, user, passwd, successfull=None):
 
         time_new = datetime.now()
         time_now = time_new.strftime("%d/%m/%Y %H:%M:%S")
-        with open(f"Backup{time_now}.txt", "w") as outputnew:
+        with open(f"/tmp/semaphore/Backup{time_now}.txt", "w") as outputnew:
             outputnew.write(str(output_date))
 
         return True  # Indicate successful login
