@@ -16,7 +16,11 @@ pass1 = os.environ.get('Password')
 
 # username = input("username ")
 # passwd = input("password ")
-router_list = ["10.168.20.1"]
+router_list = ["10.168.20.11",
+               "192.168.1.123",
+               "172.16.12.2",
+               "172.16.13.3",
+               "172.16.34.4"]
 cli_command_list = ["enable",pass1,"terminal length 0","show runn"]
 def login_to_switch(ip, user, passwd, successfull=None):
     ssh_client = paramiko.client.SSHClient()
@@ -41,7 +45,7 @@ def login_to_switch(ip, user, passwd, successfull=None):
 
         time_new = datetime.now()
         time_now = time_new.strftime("%d-%m-%Y-%H-%M-%S")
-        with open(f"/tmp/semaphore/Backup{time_now}.txt", "w") as outputnew:
+        with open(f"/tmp/semaphore/Backup-{ip}-{time_now}.txt", "w") as outputnew:
             outputnew.write(str(output_date))
 
         return True  # Indicate successful login
