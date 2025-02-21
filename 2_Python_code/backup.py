@@ -16,7 +16,7 @@ pass1 = os.environ.get('Password')
 
 # username = input("username ")
 # passwd = input("password ")
-router_list = ["10.168.20.11",
+router_list = [
                "192.168.1.123",
                "172.16.12.2",
                "172.16.13.3",
