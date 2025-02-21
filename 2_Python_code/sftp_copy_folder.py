@@ -7,8 +7,8 @@ sftp_username = "mainpy"
 sftp_password = "1234"
 
 # File details
-remote_file_path = "/home/mainpy/Documents/test_file.txt"
-local_file_path = "C:/test_folder/test_file.txt"
+remote_file_path = "/home/mainpy/Documents/test_folder"
+local_file_path = "C:/test_folder"
 
 # Set SFTP options (if needed)
 cnopts = pysftp.CnOpts()
@@ -20,6 +20,6 @@ with pysftp.Connection(sftp_host, username=sftp_username, password=sftp_password
     print("Connected to SFTP server.")
 
     # Copy file from remote to local
-    sftp.put(localpath=local_file_path,remotepath=remote_file_path,confirm=True)
+    sftp.put_r(localpath=local_file_path,remotepath=remote_file_path,confirm=True)
     # print(f"File copied successfully to {local_file_path}")
 
