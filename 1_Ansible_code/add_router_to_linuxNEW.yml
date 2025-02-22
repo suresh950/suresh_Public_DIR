@@ -1,0 +1,10 @@
+- name: Add multiple static routes on remote Linux machine
+  hosts: remote_servers
+  become: yes  # Run as sudo
+  tasks:
+    - name: Add multiple routes
+      command: sudo ip route add {{ item.to }} via {{ item.via }}
+      loop:
+        - { to: "10.10.10.0/24", via: "192.168.1.123" }
+        - { to: "192.168.2.0/24", via: "192.168.1.123" }
+        - { to: "172.16.0.0/16", via: "192.168.1.123" }

@@ -1,0 +1,13 @@
+- name: Add multiple static routes to the same gateway
+  hosts: remote_servers
+  become: yes  # Run as sudo
+  tasks:
+    - name: Add multiple routes
+      command: sudo ip route add {{ item }} via 192.168.1.123
+      loop:
+        - "10.168.20.0/24"
+        - "172.16.10.0/24"
+        - "172.16.20.0/24"
+        - "172.16.30.0/24"
+        - "172.16.40.0/24"
+
