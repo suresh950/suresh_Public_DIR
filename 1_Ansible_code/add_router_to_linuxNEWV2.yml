@@ -1,5 +1,5 @@
 - name: Add multiple static routes to the same gateway
-  hosts: remote_servers
+  hosts: all
   become: yes  # Run as sudo
   tasks:
     - name: Add multiple routes
