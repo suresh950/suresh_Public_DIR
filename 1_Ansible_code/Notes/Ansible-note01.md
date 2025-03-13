@@ -1,6 +1,6 @@
-Here's a template you can use to save your Ansible learning notes in Markdown format:
+ssh to Ubuntu-C to Ubuntu1 without login credential (login Using Key)
 
-# Ansible Learning Notes
+# login to remote ubuntu server Using Key
 
 ## Table of Contents
 1. [Introduction](#introduction)
