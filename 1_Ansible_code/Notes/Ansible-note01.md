@@ -17,7 +17,8 @@ ssh to Ubuntu-C to Ubuntu1 without login credential (login Using Key)
 ## Know_host
 - **What is Know_host?**
   - A known host is a file storing all the SSH fingerprints. 
-  - Each ssh connection will store two fingerprints, one for the remote host username and another for the remote host IP 
+  - Each ssh connection will store two fingerprints, one for the remote host username and another for the remote host IP
+---
 ansible@ubuntu-c:~$ 
 ansible@ubuntu-c:~$ 
 ansible@ubuntu-c:~$ cd .ssh
@@ -54,7 +55,8 @@ known_hosts
 ansible@ubuntu-c:~/.ssh$ cat known_hosts 
 |1|1/VGqOXxohAVtS7XiohYNgfJiUM=|6FzG5oY6S2lee4q78flB/t8Ormc= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
 |1|dsOL0PXW6DShcCsqBoLJjY8IPfg=|DcjxhcMKo/6j23cO8t6Yh+liIss= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
-ansible@ubuntu-c:~/.ssh$ 
+ansible@ubuntu-c:~/.ssh$
+
 ## Installation
 - **Prerequisites**
   - Software and hardware requirements
