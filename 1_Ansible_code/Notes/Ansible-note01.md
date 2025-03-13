@@ -88,7 +88,7 @@ ansible@ubuntu-c:~/.ssh$
 
 ansible@ubuntu-c:~/.ssh$ ssh-keygen -H -F ubuntu1
 
-# Host ubuntu1 found: line 1 
+Host ubuntu1 found: line 1 
 
 |1|1/VGqOXxohAVtS7XiohYNgfJiUM=|6FzG5oY6S2lee4q78flB/t8Ormc= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
 
@@ -96,7 +96,7 @@ ansible@ubuntu-c:~/.ssh$
 
 ansible@ubuntu-c:~/.ssh$ ssh-keygen -H -F 172.19.0.7
 
-# Host 172.19.0.7 found: line 2 
+Host 172.19.0.7 found: line 2 
 
 |1|dsOL0PXW6DShcCsqBoLJjY8IPfg=|DcjxhcMKo/6j23cO8t6Yh+liIss= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
 
