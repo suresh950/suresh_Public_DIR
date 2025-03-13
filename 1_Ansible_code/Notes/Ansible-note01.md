@@ -21,13 +21,17 @@ ssh to Ubuntu-C to Ubuntu1 without login credential (login Using Key)
 ---
 
 ansible@ubuntu-c:~$ cd .ssh
+
 -bash: cd: .ssh: No such file or directory
 
 ansible@ubuntu-c:~$ cd .ssh/
+
 -bash: cd: .ssh/: No such file or directory
 
 ansible@ubuntu-c:~$ cd /.ssh/
+
 -bash: cd: /.ssh/: No such file or directory
+
 ansible@ubuntu-c:~$ cd /.ssh
 -bash: cd: /.ssh: No such file or directory 
 ansible@ubuntu-c:~$ ls 
