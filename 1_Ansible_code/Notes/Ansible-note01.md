@@ -1,6 +1,5 @@
 Here's a template you can use to save your Ansible learning notes in Markdown format:
 
-```markdown
 # Ansible Learning Notes
 
 ## Table of Contents
@@ -80,6 +79,5 @@ Here's a template you can use to save your Ansible learning notes in Markdown fo
 
 *Note: Replace the placeholders with your actual notes and examples.*
 
-```
 
 You can use this template to organize your Ansible learning notes effectively.
