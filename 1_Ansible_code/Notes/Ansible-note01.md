@@ -33,33 +33,57 @@ ansible@ubuntu-c:~$ cd /.ssh/
 -bash: cd: /.ssh/: No such file or directory
 
 ansible@ubuntu-c:~$ cd /.ssh
+
 -bash: cd: /.ssh: No such file or directory 
+
 ansible@ubuntu-c:~$ ls 
+
 testfile
+
 ansible@ubuntu-c:~$ ssh ansible@ubuntu1
+
 The authenticity of host 'ubuntu1 (172.19.0.7)' can't be established.
+
 ECDSA key fingerprint is SHA256:z96FbonokCWqE89m5pGU/ug7BgdBaJbGeCivWqxdLvE.
+
 This key is not known by any other names
+
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+
 Warning: Permanently added 'ubuntu1,172.19.0.7' (ECDSA) to the list of known hosts.
+
 ansible@ubuntu1's password: 
+
 To run a command as administrator (user "root"), use "sudo <command>".
+
 See "man sudo_root" for details.
+
 ansible@ubuntu1:~$ 
+
 ansible@ubuntu1:~$ exit
+
 logout
+
 Connection to ubuntu1 closed.
+
 ansible@ubuntu-c:~$ 
+
 ansible@ubuntu-c:~$ cd /.ssh
+
 -bash: cd: /.ssh: No such file or directory
+
 ansible@ubuntu-c:~$ cd .ssh/
-ansible@ubuntu-c:~/.ssh$ 
-ansible@ubuntu-c:~/.ssh$ 
+
 ansible@ubuntu-c:~/.ssh$ ls 
+
 known_hosts
+
 ansible@ubuntu-c:~/.ssh$ cat known_hosts 
+
 |1|1/VGqOXxohAVtS7XiohYNgfJiUM=|6FzG5oY6S2lee4q78flB/t8Ormc= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
+
 |1|dsOL0PXW6DShcCsqBoLJjY8IPfg=|DcjxhcMKo/6j23cO8t6Yh+liIss= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAIllTL6bzJMZp11kPM/Fo9Ufr07yim/KQDPkNz0yhElrd+kx5+tpOVp7AIyXxYhfA0pkuxVdlzCxuVDm/Ls3fk=
+
 ansible@ubuntu-c:~/.ssh$
 
 ## Installation
