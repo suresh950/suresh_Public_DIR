@@ -1,1 +1,4 @@
-testfile
+mainpyub@mainpyub:~$ sudo usermod -aG docker $USER
+mainpyub@mainpyub:~$ su - $USER
+Password:
+mainpyub@mainpyub:~$
