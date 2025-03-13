@@ -145,19 +145,39 @@ id_rsa  id_rsa.pub  known_hosts
 ansible@ubuntu-c:~/.ssh$ 
 
 
-  - Software and hardware requirements
-- **Installation Steps**
-  - Detailed steps to install Ansible on different operating systems
-
 ## Copy the public ky to remote server using below command 
-- **Inventory File**
-  - Structure and examples
-- **Ansible Configuration File (ansible.cfg)**
-  - Key settings and options
 
-## Modules
-- **Core Modules**
-  - Overview of commonly used core modules
+ansible@ubuntu-c:~/.ssh$ ssh-copy-id ansible@ubuntu1
+
+ansible@ubuntu-c:~/.ssh$ ssh ubuntu1
+
+Last login: Thu Mar 13 17:55:09 2025 from 172.19.0.5
+
+To run a command as administrator (user "root"), use "sudo <command>".
+
+See "man sudo_root" for details.
+
+ansible@ubuntu1:~$ 
+
+## automate the Copying the public key to multiple remote server
+
+ansible@ubuntu1:~$ sudo apt update
+
+ansible@ubuntu1:~$ sudo apt install sshpass
+
+ansible@ubuntu1:~$ echo password > password.txt
+
+ansible@ubuntu1:~$ ls 
+
+password.txt
+
+ansible@ubuntu1:~$ cat password.txt 
+
+password
+
+ansible@ubuntu1:~$ 
+
+
 - **Custom Modules**
   - Creating and using custom modules
 
