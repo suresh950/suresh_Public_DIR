@@ -19,12 +19,13 @@ ssh to Ubuntu-C to Ubuntu1 without login credential (login Using Key)
   - A known host is a file storing all the SSH fingerprints. 
   - Each ssh connection will store two fingerprints, one for the remote host username and another for the remote host IP
 ---
-ansible@ubuntu-c:~$ 
-ansible@ubuntu-c:~$ 
+
 ansible@ubuntu-c:~$ cd .ssh
 -bash: cd: .ssh: No such file or directory
+
 ansible@ubuntu-c:~$ cd .ssh/
 -bash: cd: .ssh/: No such file or directory
+
 ansible@ubuntu-c:~$ cd /.ssh/
 -bash: cd: /.ssh/: No such file or directory
 ansible@ubuntu-c:~$ cd /.ssh
