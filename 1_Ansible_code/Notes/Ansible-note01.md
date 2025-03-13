@@ -103,12 +103,53 @@ Host 172.19.0.7 found: line 2
 ansible@ubuntu-c:~/.ssh$
 
 ## SSH_KEY 
-- **Prerequisites**
+- 1 create the public and private key to local server using below command 
+
+||ansible@ubuntu-c:~/.ssh$ ssh-keygen
+
+Generating public/private rsa key pair.
+
+Enter file in which to save the key (/home/ansible/.ssh/id_rsa): 
+
+Enter passphrase (empty for no passphrase): 
+
+Enter same passphrase again: 
+
+Your identification has been saved in /home/ansible/.ssh/id_rsa
+
+Your public key has been saved in /home/ansible/.ssh/id_rsa.pub
+
+The key fingerprint is:
+
+SHA256:/Rw1z4HJGcPDDpzQf+ChM0LaUG0tcuB+1jn4SxKzW8c ansible@ubuntu-c
+
+The key's randomart image is:
+
++---[RSA 3072]----+
+|        .+* =o   |
+|       ..o X.B*  |
+|        =.+ B=*. |
+|       ..+ +o=.=.|
+|        S.o*++. o|
+|          oo=.o  |
+|           oo+ E |
+|            = o  |
+|           . .   |
++----[SHA256]-----+
+ansible@ubuntu-c:~/.ssh$
+
+ansible@ubuntu-c:~/.ssh$ ls 
+
+id_rsa  id_rsa.pub  known_hosts
+
+ansible@ubuntu-c:~/.ssh$ 
+
+
   - Software and hardware requirements
 - **Installation Steps**
   - Detailed steps to install Ansible on different operating systems
 
-## Configuration
+## Copy the public ky to remote server using below command 
 - **Inventory File**
   - Structure and examples
 - **Ansible Configuration File (ansible.cfg)**
