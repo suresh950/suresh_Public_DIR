@@ -9,6 +9,8 @@ xml_command = "<show><system><info></info></system></show>"
 xml_elements = ["model", "hostname","sw-version"]
 fw_ip_address= ["10.10.10.10"]
 
+
+
 try:
     for ip in fw_ip_address:
         api_url = f'https://{ip}/api/?type=op&cmd={xml_command}&key={api_key}'
