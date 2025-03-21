@@ -1,3 +1,6 @@
+"""
+TO Delete the address object in PA firewall just you need to pass the name in API-URL (in this case it is 'address_name')
+"""
 import urllib3
 import ssl
 import requests
@@ -22,18 +25,7 @@ if __name__ == '__main__':
             for row in csv_reader:
                 address_name = row[0]
                 address_ip = row[1]
-
-                # Corrected JSON payload (No @name inside JSON)
-                # json_data_2 = {
-                #     "entry": {
-                #         "@name": address_name,
-                #         "ip-netmask": address_ip  # No need for @name
-                #     }
-                # }
-
-                # Palo Alto API endpoint (name passed as a query parameter)
                 api_url = f"https://{firewall_ip}/restapi/v10.1/Objects/Addresses?location=vsys&vsys=vsys1&name={address_name}"
-
                 # Sending request with API Key in headers
                 api_request = requests.delete(url=api_url, headers=headers, verify=False)
                 api_response = api_request.text
