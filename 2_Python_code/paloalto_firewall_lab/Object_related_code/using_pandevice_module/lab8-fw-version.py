@@ -24,12 +24,9 @@ if __name__ == '__main__':
 
     #---------------------------------------------------------------------------------------------------------------------------------------------------
     # This is the section where you can set user , password , command , os_filter and firewall_list.
-    api_user      = "PUT_YOUR_USERNAME_HERE"
-    api_password  = "PUT_YOUR_PASSWORD_HERE"
-    firewalls     = [["PUT_FW1_HOSTNAME_HERE","PUT_FW1_IP_HERE"], 
-                     ["PUT_FW2_HOSTNAME_HERE","PUT_FW2_IP_HERE"], 
-                     ["PUT_FW3_HOSTNAME_HERE","PUT_FW3_IP_HERE"], 
-                     ["PUT_FW4_HOSTNAME_HERE","PUT_FW4_IP_HERE"]]
+    api_user      = "api-user"
+    api_password  = "Suresh@1234"
+    firewalls     = [["PUT_FW1_HOSTNAME_HERE","10.10.10.10"]]
 
     command       = "show system info"
     os_filter     = "<sw-version>(.*)</sw-version>"
