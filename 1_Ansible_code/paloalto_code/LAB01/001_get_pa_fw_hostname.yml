@@ -1,0 +1,23 @@
+---
+- name: get the hostname of all the PA firewall
+  hosts: all
+  connection: local
+  gather_facts: False
+
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+  - name: Load Variable
+    include_vars: vars.yml
+
+  - name: get session statistic of each firewall
+    panos_facts:
+      provider: '{{provider}}'
+      gather_subset: ['session']
+
+    register: result
+  - debug:
+        msg: '{{"inventory_hostname"}} : {{ result.ansible_facts.ansible_net_session_usage }} / {{ result.ansible_facts.ansible_net_session_max }}'
+
+...
