@@ -1,9 +1,11 @@
+"""
+    This script will log in to the firewall and run the command
+"""
 from pandevice import firewall
 import re
 from pprint import pprint
 import xml.etree.ElementTree as ET
 import sys
-
 if __name__ == '__main__':
     try:
         api_user = "api-user"
@@ -30,9 +32,6 @@ if __name__ == '__main__':
                 print(f"is-dhcp: {a[0][5].text}")
                 print(f"ipv6-address: {a[0][6].text}")
             # print(root)
-
-
     except Exception as error:
         print(error)
         sys.exit(0)
-
