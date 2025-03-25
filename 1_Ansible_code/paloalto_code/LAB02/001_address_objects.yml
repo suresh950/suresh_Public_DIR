@@ -1,0 +1,39 @@
+# Configurethe address objects
+# It connects to all hosts defined in the inventory
+---
+- name: Configurethe address objects
+  hosts: all
+  connection:  local
+  gather_facts:  False
+
+  collections:
+    - paloaltonetworks.panos
+
+# Load variables from an external file
+  tasks:
+  - name: Load Variables
+    include_vars: device_details_file.yml
+
+  - name: Create object 'Test-One'
+    panos_address_object:
+      provider: '{{ device_details }}'
+      name: 'One1'
+      address_type: 'ip-netmask'
+      value: '4.1.41.41'
+      description: 'Description One'
+
+  - name: Create object 'Test-Two'
+    panos_address_object:
+      provider: '{{ device_details }}'
+      name: 'Two1'
+      address_type: 'ip-range'
+      value: '1.0.1.1-1.0.1.90'
+      description: 'Description Two'
+
+  - name: Create object 'Test-Three'
+    panos_address_object:
+      provider: '{{ device_details }}'
+      name: 'Three1'
+      address_type: 'fqdn'
+      value: 'foo11.barnew.baz'
+      description: 'Description Three'

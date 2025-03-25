@@ -1,0 +1,23 @@
+# This playbook retrieves session configuration of all Palo Alto firewalls
+# It connects to all hosts defined in the inventory
+# and uses the panos_facts module to gather all configuration.
+---
+- name: Get Palo Alto Networks Firewalls Session Information
+  hosts: all
+  connection:  local
+  gather_facts:  False
+
+  collections:
+    - paloaltonetworks.panos
+
+# Load variables from an external file
+  tasks:
+  - name: Load Variables
+    include_vars: device_details_file.yml
+
+  - name: Create object group 'Prod'
+    panos_address_group:
+      provider: '{{ device_details }}'
+      name: 'Prod'
+      static_value: ['Test-One', 'Test-Three']
+  
