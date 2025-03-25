@@ -16,7 +16,6 @@
       provider: '{{provider}}'
       gather_subset: ['session']
     register: result
-
   - debug:
       msg: '{{"inventory_hostname"}} : {{ result.ansible_facts.ansible_net_session_usage }} / {{ result.ansible_facts.ansible_net_session_max }}'
 ...
