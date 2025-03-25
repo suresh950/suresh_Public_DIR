@@ -1,4 +1,4 @@
-# This playbook retrieves system configuration of all Palo Alto firewalls
+# This playbook retrieves session configuration of all Palo Alto firewalls
 # It connects to all hosts defined in the inventory
 # and uses the panos_facts module to gather all configuration.
 ---
@@ -16,13 +16,13 @@
     include_vars: device_details_file.yml
 
   # Retrieve Full configuration from each firewall and store in register called result
-  - name: Get Firewall system configuration
+  - name: Get Firewall session configuration
     panos_facts:
       provider: '{{device_details}}' # provider is one of the providers, device_details is a variable defined in vars.yml
-      gather_subset: ['system'] # system is a Parameters to gather system subsets of information
-    register: system_config
+      gather_subset: ['session'] # session is a Parameters to gather session subsets of information
+    register: session_config
   
   # Display the hostname of the firewall
   - debug:
-      msg: '{{system_config}}'
+      msg: '{{session_config}}'
 ...
