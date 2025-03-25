@@ -1,0 +1,30 @@
+# Index of Code for LAB01 Folder
+
+This file contains the index of all the code files in the LAB01 folder.
+
+1. `01_setup_firewall.yml` - Ansible playbook for initial firewall setup.
+2. `02_configure_nat.yml` - Ansible playbook for configuring NAT rules.
+3. `03_create_security_policies.yml` - Ansible playbook for creating security policies.
+4. `04_verify_configuration.yml` - Ansible playbook for verifying the configuration.
+5. `README.md` - Documentation for the LAB01 folder.
+
+# Notes:
+- Ensure all playbooks are tested in a lab environment before applying to production.
+- Follow the naming conventions for consistency.
+
+
+gather_subset
+
+-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Default:
+
+["!config"]
+
+Scopes what information is gathered from the device. 
+Possible values for this argument include all, system, session, interfaces, ha, routing, vr, vsys and config. 
+You can specify a list of values to include a larger subset. 
+Values can also be used with an initial ! to specify that a specific subset should not be collected. 
+Certain subsets might be supported by Panorama.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
