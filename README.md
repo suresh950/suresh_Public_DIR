@@ -1,3 +1,6 @@
+- install python packege in my Ubuntu lab machine
+- python3 -m pip install --break-system-packages pandevice
+
 # suresh_Public_DIR
 
 Schedule a Python script with GitHub Actions
