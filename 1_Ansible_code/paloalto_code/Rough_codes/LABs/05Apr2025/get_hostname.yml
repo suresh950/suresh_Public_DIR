@@ -1,7 +1,6 @@
 # This playbook retrieves the hostname of all Palo Alto firewalls
 # It connects to all hosts defined in the inventory
 # and uses the panos_facts module to gather system information.
-
 ---
 - name: get the hostname of all the PA firewall
   hosts: all
@@ -10,18 +9,17 @@
 
   collections:
     - paloaltonetworks.panos
-
   tasks:
   # Load variables from an external file
   - name: Load Variable
-    include_vars: vars.yml
+    include_vars: device_details_file.yml
     
   # Retrieve system information (including hostname) from each firewall
   # The panos_facts module is used here with the 'system' subset
   # to gather details like hostname, model, and serial number.
   - name: get  system information of each firewall
     panos_facts:
-      provider: '{{provider}}'
+      provider: '{{device_details}}'
       gather_subset: ['system']
 
     register: result
@@ -29,5 +27,4 @@
     # Display the hostname of the firewall
   - debug:
         msg: '{{result.ansible_facts.ansible_net_hostname}}'
-
 ...

@@ -1,0 +1,5 @@
+device_details:
+  ip_address: "{{ inventory_hostname }}"
+  username: 'api-user'
+  password: 'password'
+  hostname: 'PA_firewall'

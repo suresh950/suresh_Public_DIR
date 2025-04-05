@@ -1,0 +1,24 @@
+# this plyabook will be used to change the hostname of the palo alto firewall
+#   # The playbook will set the hostname to the inventory hostname of each firewall.
+#   # The playbook also loads device details from an external file.
+#   # The playbook will set the hostname to the inventory hostname of each firewall.
+
+---
+- name: Configure hostname on Palo Alto Firewall
+  hosts: all
+  connection: local
+  gather_facts: false
+
+  collections:
+    - paloaltonetworks.panos
+  tasks:
+    # Load variables from an external file
+    - name: Load Variable
+      include_vars: device_details_file.yml
+
+    # Set the hostname using the panos_hostname module
+    - name: Set the hostname
+      panos_mgtconfig:
+        provider: '{{ device_details }}'
+        hostname: "testHostname"
+    

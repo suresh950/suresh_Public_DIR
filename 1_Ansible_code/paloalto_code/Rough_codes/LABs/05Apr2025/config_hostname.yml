@@ -1,0 +1,24 @@
+# This playbook sets the hostname for all Palo Alto firewalls in the inventory.
+# It connects to each host and uses the panos_hostname module to set the hostname.
+# The hostname is set to the inventory hostname of each firewall.
+# The playbook also loads device details from an external file.
+
+---
+- name: Configure hostname on Palo Alto Firewall
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    provider:
+      ip_address: "10.10.10.10"
+      username: "api-user"
+      password: "password"
+
+  tasks:
+    - name: Set the hostname
+      paloaltonetworks.panos.panos_mgtconfig:
+        provider: "{{ provider }}"
+        hostname: "PA-Firewall-1"
+        commit: true
+
