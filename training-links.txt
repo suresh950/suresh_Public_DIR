@@ -1,0 +1,7 @@
+Automation        : https://www.udemy.com/course/palo-alto-networks-automation-with-api-python-ansible/
+Troubleshooting   : https://www.udemy.com/course/introduction-to-troubleshooting-with-palo-alto-firewalls/
+Cyber Security    : https://www.udemy.com/course/palo-alto-networks-firewall-hands-on-cyber-security-course/
+PCNSE Preparation : https://www.udemy.com/course/the-complete-palo-alto-pcnse-practice-test-for-2020/
+
+Want to get some extra free content on Palo Alto Networks technologies ? Check my Youtube Channel:
+https://www.youtube.com/channel/UCqR3RpL1wCdpfcJhsZZgIgw
