@@ -1,0 +1,17 @@
+---
+- name: Test API connectivity to Panorama
+  hosts: panorama
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+    - name: Create object 'Test-One'
+      paloaltonetworks.panos.panos_address_object:
+        provider: '{{ provider }}'
+        device_group: 'BW-ISS'
+        name: 'Test-One'
+        value: '1.1.1.1'
+        description: 'Description One'
+...

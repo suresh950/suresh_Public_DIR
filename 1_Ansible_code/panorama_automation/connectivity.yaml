@@ -1,6 +1,6 @@
 ---
 - name: Test API connectivity to Panorama
-  hosts: hosts
+  hosts: localhost
   connection: local
   gather_facts: no
   collections:
