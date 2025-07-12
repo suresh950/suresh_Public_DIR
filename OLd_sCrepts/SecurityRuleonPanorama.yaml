@@ -1,0 +1,22 @@
+- name: Configure security rule via Panorama
+  hosts: localhost
+  connection: local
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+    - name: Create security rule
+      panos_panorama_security_rule:
+        provider:
+          ip_address: 10.10.10.202
+          username: admin
+          password: Suresh@1234
+        device_group: "BW-ISS"
+        rule_name: "Allow-DNS"
+        description: "Allow outbound DNS"
+        source_zone: ["trust"]
+        destination_zone: ["untrust"]
+        source_ip: ["any"]
+        destination_ip: ["any"]
+        application: ["dns"]
+        action: "allow"

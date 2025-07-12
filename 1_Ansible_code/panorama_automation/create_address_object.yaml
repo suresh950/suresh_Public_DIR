@@ -1,5 +1,5 @@
 ---
-- name: Test API connectivity to Panorama
+- name: Create address object in Device Group
   hosts: panorama
   connection: local
   gather_facts: no
