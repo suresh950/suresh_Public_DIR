@@ -1,0 +1,26 @@
+---
+- name: Test API connectivity to Panorama
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  vars:
+    provider:
+      ip_address: "10.10.10.202"      # Replace with your Panorama IP
+      username: "admin"
+      password: "Suresh@1234"
+      # timeout: 30  <-- ❌ Remove this line
+      # validate_certs: false  # Optional, if using self-signed certs
+
+  tasks:
+    - name: Run basic operational command (show system info)
+      panos_op:
+        provider: "{{ provider }}"
+        cmd: "show system info"
+      register: result
+
+    - name: Print Panorama system info (if connection successful)
+      debug:
+        var: result.stdout
