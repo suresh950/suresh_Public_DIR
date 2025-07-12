@@ -4,4 +4,6 @@
     username: "admin"
     password: "Suresh@1234"
 
+
+  json_file_path: "./test1.json"
 ...

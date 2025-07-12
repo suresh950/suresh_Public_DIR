@@ -1,0 +1,29 @@
+---
+- name: Extract device group names using regex
+  hosts: panorama
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+    - name: Get list of device groups
+      panos_op:
+        provider: "{{ provider }}"
+        cmd: "show devicegroups"
+      register: result
+
+    - name: Convert full XML response to string (in case it's parsed as dict)
+      set_fact:
+        xml_output_string: "{{ result.stdout | to_nice_yaml }}"
+
+    - name: Extract device group names using regex
+      set_fact:
+        device_group_names: "{{ xml_output_string | regex_findall('@name: (.+)') }}"
+
+    - name: Show device group names
+      debug:
+        var: device_group_names
+    
+
+...

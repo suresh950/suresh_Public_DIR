@@ -1,0 +1,18 @@
+---
+- name: Read JSON file example
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+    json_file_path: "./test1.json"
+
+  tasks:
+    - name: Read JSON file and parse content
+      set_fact:
+        json_data: "{{ lookup('file', json_file_path) | from_json }}"
+
+    - name: Display full JSON data
+      debug:
+        var: item['@name']
+      loop: "{{ json_data.response.result.devicegroups.entry }}"

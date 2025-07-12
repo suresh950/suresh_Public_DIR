@@ -1,0 +1,25 @@
+---
+- name: Gather the list of the device group
+  hosts: panorama
+  connection: local
+  gather_facts: yes
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+  - name: Get list of device groups
+    panos_op:
+      provider: "{{ provider }}"
+      cmd: "show devicegroups"
+    register: result
+
+  - name: Display device group names
+    debug:
+      var: result.stdout
+
+  - name: write to outut to the txt file
+    copy:
+      dest: ./test1.json
+      content: "{{result.stdout}}"
+  
+...
