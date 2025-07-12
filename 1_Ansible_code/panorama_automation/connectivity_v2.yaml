@@ -1,15 +1,15 @@
 ---
 - name: Test API connectivity to Panorama
-  hosts: hosts
+  hosts: panorama
   connection: local
   gather_facts: no
   collections:
     - paloaltonetworks.panos
-  vars:
-    provider:
-      ip_address: "10.10.10.202"
-      username: "admin"
-      password: "Suresh@1234"
+  # vars:
+  #   provider:
+  #     ip_address: "10.10.10.202"
+  #     username: "admin"
+  #     password: "Suresh@1234"
   tasks:
     - name: Run basic operational command (show system info)
       panos_op:
