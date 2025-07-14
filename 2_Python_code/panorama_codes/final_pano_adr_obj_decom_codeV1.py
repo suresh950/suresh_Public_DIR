@@ -26,6 +26,7 @@ try:
     post_rulebase = PostRulebase()
     device_group.add(post_rulebase)
     security_rules = SecurityRule.refreshall(post_rulebase)
+    print (security_rules)
     changed_rules = []
     for rule in security_rules:
         updated = False
