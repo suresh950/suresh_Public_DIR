@@ -1,17 +1,16 @@
 ---
+# delet address to address group
+
 - name: Create address object in Device Group
   hosts: panorama
   connection: local
   gather_facts: no
   collections:
     - paloaltonetworks.panos
-
   tasks:
-    - name: Create object 'Test-One'
-      paloaltonetworks.panos.panos_address_object:
+    - name: Create object group 'Prod'
+      paloaltonetworks.panos.panos_address_group:
         provider: '{{ provider }}'
         device_group: 'BW-ISS'
-        name: 'rmadr'
-        value: '3.3.3.33'
-        description: 'rmadr'
-...
+        name: 'Prod'
+        static_value: []

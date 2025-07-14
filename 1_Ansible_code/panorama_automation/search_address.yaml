@@ -1,0 +1,37 @@
+---
+# add address to address group
+
+- name: Create address object in Device Group
+  hosts: panorama
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+  - name: Get all address groups and their config
+    paloaltonetworks.panos.panos_address_group:
+      provider: "{{ provider }}"
+      device_group: 'BW-ISS'
+      state: "gathered"
+      gathered_filter: "*"
+
+    register: allgroups
+
+  - name: Display full JSON data
+    debug:
+      var: allgroups
+  - name: Remove address object from all groups
+  paloaltonetworks.panos.panos_address_group:
+    provider: "{{ device }}"
+    name: "{{ item.name }}"
+    description: "{{ item.description | default(omit, true) }}"
+    tag: "{{ item.tag | default(omit, true) }}"
+    static_value: "{{ item.static_value | difference([rmadr]) }}"
+  loop: "{{ allgroups.gathered }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - item.static_value
+    - rmadr in item.static_value
+  
