@@ -34,6 +34,7 @@ target_group.refresh()
 # Remove the address from the group's static_value
 if target_group.static_value and ADDRESS_TO_REMOVE in target_group.static_value:
     target_group.static_value.remove(ADDRESS_TO_REMOVE)
+    print(dir(target_group.static_value))
     target_group.apply()  # Push the updated address group
     print(f"✅ Removed '{ADDRESS_TO_REMOVE}' from address group '{ADDRESS_GROUP_NAME}'.")
 else:
