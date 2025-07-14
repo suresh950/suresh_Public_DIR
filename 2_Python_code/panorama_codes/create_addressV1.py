@@ -2,7 +2,7 @@ from panos.panorama import Panorama
 from panos.panorama import DeviceGroup
 from panos.objects import AddressObject
 import pandas as pd
-#  DEVICE_GROUP_NAME	ADDRESS_VALUE	ADDRESS_TYPE	DESCRIPTION
+
 
 file_path = "address_object.xlsx"
 
@@ -23,13 +23,6 @@ PASSWORD = "Suresh@1234"
 
 DEVICE_GROUP_NAME = DEVICE_GROUP_NAME_LIST[0]  
 print(DEVICE_GROUP_NAME)
-
-# # Address object details
-# ADDRESS_NAME = "Test-Threenew"
-# ADDRESS_VALUE = "10.10.10.2"
-# ADDRESS_TYPE = "ip-netmask"  
-# DESCRIPTION = "Created via pscript"
-
 
 panorama = Panorama(PANORAMA_HOST, USERNAME, PASSWORD)
 
