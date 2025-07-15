@@ -42,7 +42,7 @@ try:
                 if len(rule.source)==1:
                     rule.delete()
                     updated = False
-                    print(f"✅ Removed rule: {rule.name}")
+                    print(f"📝 Removed rule: {rule.name}")
                 else:
                     rule.source.remove(ADDRESS_OBJECT_TO_REMOVE)
                     updated = True
@@ -50,7 +50,7 @@ try:
                 if len(rule.destination)==1:
                     rule.delete()
                     updated = False
-                    print(f"✅ Removed rule: {rule.name}")
+                    print(f"📝 Removed rule: {rule.name}")
                 else:
                     rule.destination.remove(ADDRESS_OBJECT_TO_REMOVE)
                     updated = True
@@ -79,4 +79,4 @@ try:
         print(f"Address object '{ADDRESS_OBJECT_TO_REMOVE}' is deleted")
 
 except Exception as error:
-    print(error)
+    print("❌", error)
