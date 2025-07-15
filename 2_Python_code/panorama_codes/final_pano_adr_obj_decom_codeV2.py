@@ -35,24 +35,30 @@ try:
         post_rulebase = PostRulebase()
         device_group.add(post_rulebase)
         security_rules = SecurityRule.refreshall(post_rulebase)
-
         changed_rules = []
         for rule in security_rules:
             updated = False
             if rule.source and ADDRESS_OBJECT_TO_REMOVE in rule.source:
-                rule.source.remove(ADDRESS_OBJECT_TO_REMOVE)
-                updated = True
+                if len(rule.source)==1:
+                    rule.delete()
+                    updated = False
+                    print(f"✅ Removed rule: {rule.name}")
+                else:
+                    rule.source.remove(ADDRESS_OBJECT_TO_REMOVE)
+                    updated = True
             if rule.destination and ADDRESS_OBJECT_TO_REMOVE in rule.destination:
-                rule.destination.remove(ADDRESS_OBJECT_TO_REMOVE)
-                updated = True
+                if len(rule.destination)==1:
+                    rule.delete()
+                    updated = False
+                    print(f"✅ Removed rule: {rule.name}")
+                else:
+                    rule.destination.remove(ADDRESS_OBJECT_TO_REMOVE)
+                    updated = True
             if updated:
                 rule.apply()
                 changed_rules.append(rule.name)
                 print(f"✅ Removed '{ADDRESS_OBJECT_TO_REMOVE}' from rule: {rule.name}")
 
-            if len(rule.source)==0 or len(rule.destination)==0:
-                rule.delete()
-                
         # check if it is available in any address Group
         address_groups = AddressGroup.refreshall(device_group)
 
