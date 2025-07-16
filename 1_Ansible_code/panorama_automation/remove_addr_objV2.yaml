@@ -1,0 +1,28 @@
+---
+- name: Create address object in Device Group
+  hosts: panorama
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+    - name: remove the address object
+      paloaltonetworks.panos.panos_address_object:
+        provider: '{{ provider }}'
+        device_group: 'BW-ISS'
+        name: "{{item}}"
+        state: absent
+      loop:
+        - one
+        - address_object_1
+        - address_object_2
+        - address_object_3
+        - address_object_4
+        - address_object_5
+        - address_object_6
+        - address_object_7
+        - address_object_8
+        - address_object_9
+        - address_object_10
+...
