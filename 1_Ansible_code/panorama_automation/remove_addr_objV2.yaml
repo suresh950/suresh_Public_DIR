@@ -5,7 +5,6 @@
   gather_facts: no
   collections:
     - paloaltonetworks.panos
-
   tasks:
     - name: remove the address object
       paloaltonetworks.panos.panos_address_object:
