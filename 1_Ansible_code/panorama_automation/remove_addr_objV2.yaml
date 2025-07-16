@@ -1,3 +1,7 @@
+# this playbook removes (deletes) bulk address object 
+# (address object should not be used any where eaither address group or policy) 
+# using loop as you can see below
+
 ---
 - name: Create address object in Device Group
   hosts: panorama
@@ -14,6 +18,7 @@
         state: absent
       loop:
         - one
+        - 1.1.1.1
         - address_object_1
         - address_object_2
         - address_object_3

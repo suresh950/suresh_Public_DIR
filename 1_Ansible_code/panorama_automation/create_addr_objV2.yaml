@@ -1,0 +1,22 @@
+# this playbook creates bulk address object using loop as you can see below
+---
+- name: Create address object in Device Group
+  hosts: panorama
+  connection: local
+  gather_facts: no
+  collections:
+    - paloaltonetworks.panos
+
+  tasks:
+    - name: create bulk address object
+      paloaltonetworks.panos.panos_address_object:
+        provider: '{{ provider }}'
+        device_group: 'BW-ISS'
+        name: "{{item.name}}"
+        value: "{{item.value}}"
+        description: "{{item.description}}"
+      loop:
+        - { name: 'Test-Obj-1', value: '192.168.1.10', description: 'Object 1' }
+        - { name: 'Test-Obj-2', value: '192.168.1.11', description: 'Object 2' }
+        - { name: 'Test-Obj-3', value: '192.168.1.12', description: '' }
+...
