@@ -37,16 +37,15 @@ namespace: awx
 kubectl apply -k .
 ```
 
-#### set the default namespace:- 
+#### Set the default namespace:- 
 
 ```javascript
 kubectl config set-context --current --namespace=awx
 ```
 
 ## Step4: Install awx
-#############################################################
 
-##### update kustomization.yaml resources
+##### update **kustomization.yaml** resources
 
 ###### file: awx-server.yaml
 
