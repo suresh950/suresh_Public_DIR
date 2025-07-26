@@ -7,7 +7,7 @@ Commands:
 
 [https://docs.docker.com/engine/instal...](https://docs.docker.com/engine/install/ubuntu/)
 
-## Step2: Install Minikube & start
+## Step 2: Install Minikube & start
 #############################################################
 
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
@@ -16,10 +16,9 @@ Commands:
 
 `set the alias:- alias kubectl="minikube kubectl --"`
 
-#### Step3: Install AWX Operator
+## Step 3: Install AWX Operator
 
--------------------------------------------------------------
-###### file: kustomization.yaml
+#### file: kustomization.yaml
 
 `
 apiVersion: kustomize.config.k8s.io/v1beta1
