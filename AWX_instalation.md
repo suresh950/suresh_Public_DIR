@@ -24,20 +24,24 @@ Commands:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-github.com/ansible/awx-operator/config/default?ref=2.0.1
+  - github.com/ansible/awx-operator/config/default?ref=2.19.1
 images:
-name: quay.io/ansible/awx-operator
-    newTag: 2.1.0
+  - name: quay.io/ansible/awx-operator
+    newTag: 2.19.1
 namespace: awx
 ```
 
+#### Once you have created the file, run the Command: 
 
+```javascript
+kubectl apply -k .
+```
 
--------------------------------------------------------------
-Command: kubectl apply -k . 
--------------------------------------------------------------
+#### set the default namespace:- 
 
-set the default namespace:- ` kubectl config set-context --current --namespace=awx `
+```javascript
+kubectl config set-context --current --namespace=awx
+```
 
 ## Step4: Install awx
 #############################################################
