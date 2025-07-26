@@ -36,18 +36,18 @@ update kustomization.yaml resources
 
 file: awx-server.yaml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
----
+`---
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx-server
 spec:
-  service_type: nodeport
+  service_type: nodeport`
 -------------------------------------------------------------
-Command: kubectl apply -k .
+Command: `kubectl apply -k .`
 -------------------------------------------------------------
-check installation logs:   kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx
+check installation logs:   `kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx`
 
 Step5: Enable external access
 ############################################################
-kubectl port-forward service/awx-server-service -n awx  --address 0.0.0.0 30080:80
+`kubectl port-forward service/awx-server-service -n awx  --address 0.0.0.0 30080:80`
