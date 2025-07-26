@@ -11,7 +11,7 @@ Commands:
 [https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
 
 ```javascript
-minikube start --cpus=4 --memory=6g --addons=ingress
+minikube start --cpus=2 --memory=6g --addons=ingress
 ```
 
 ```javascript
@@ -78,14 +78,14 @@ namespace: awx
 kubectl apply -k .
 ```
 
-If you want to Check installation logs then you can run the below command:   
+##### If you want to check installation logs, then you can run the following command:   
 
-```python
+```javascript
 kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx
 ```
 
-## Step5: Enable external access
+## Step 5: Enable external access (You will not be able to access from another machine in the same network until you run the following command)
 
-```bash
+```javascript
 kubectl port-forward service/awx-server-service -n awx  --address 0.0.0.0 30080:80
 ```
