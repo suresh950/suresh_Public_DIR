@@ -2,7 +2,7 @@
 
 Code
 
-    `sudo firewall-cmd --state`
+    sudo firewall-cmd --state
 If it's not running, you can start and enable it:
 Code
 
