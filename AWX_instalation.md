@@ -86,6 +86,6 @@ kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n aw
 
 ## Step5: Enable external access
 
-```python
+```bash
 kubectl port-forward service/awx-server-service -n awx  --address 0.0.0.0 30080:80
 ```
