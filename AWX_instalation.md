@@ -80,8 +80,8 @@ kubectl apply -k .
 
 If you want to Check installation logs then you can run the below command:   
 
-```javascript
-`kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx`
+```python
+kubectl logs -f deployments/awx-operator-controller-manager -c awx-manager -n awx
 ```
 
 ## Step5: Enable external access
