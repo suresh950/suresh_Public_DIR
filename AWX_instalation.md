@@ -2,14 +2,16 @@
 
 Commands:
 
-#### Step 1: Install Docker
+## Step 1: Install Docker
 #############################################################
+
 https://docs.docker.com/engine/instal...
 https://docs.docker.com/engine/instal...
 
 
-#### Step2: Install Minikube & start
+## Step2: Install Minikube & start
 #############################################################
+
 https://minikube.sigs.k8s.io/docs/start/
 
 `minikube start --cpus=4 --memory=6g --addons=ingress`
