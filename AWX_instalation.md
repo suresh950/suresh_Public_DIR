@@ -5,10 +5,7 @@ Commands:
 ## Step 1: Install Docker
 #############################################################
 
-https://docs.docker.com/engine/instal...
-
-https://docs.docker.com/engine/instal...
-
+[https://docs.docker.com/engine/instal...](https://docs.docker.com/engine/install/ubuntu/)
 
 ## Step2: Install Minikube & start
 #############################################################
