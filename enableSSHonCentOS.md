@@ -1,8 +1,9 @@
 ## To open a port on CentOS, the primary tool used is firewalld. Check FirewallD status.
 
 Code
-
+```python
     sudo firewall-cmd --state
+```
 If it's not running, you can start and enable it:
 Code
 
