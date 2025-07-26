@@ -20,7 +20,7 @@ Commands:
 
 #### file: kustomization.yaml
 
-`
+```javascript
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -29,12 +29,12 @@ images:
 name: quay.io/ansible/awx-operator
     newTag: 2.1.0
 namespace: awx
-`
+```
 
 
 
 -------------------------------------------------------------
-Command: ` kubectl apply -k . `
+Command: kubectl apply -k . 
 -------------------------------------------------------------
 
 set the default namespace:- ` kubectl config set-context --current --namespace=awx `
