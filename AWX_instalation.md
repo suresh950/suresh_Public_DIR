@@ -1,21 +1,24 @@
+# AWX Installation on Ubuntu machine
+
 Commands:
-Step1: Install Docker
+
+#### Step 1: Install Docker
 #############################################################
 https://docs.docker.com/engine/instal...
 https://docs.docker.com/engine/instal...
 
 
-Step2: Install Minikube & start
+#### Step2: Install Minikube & start
 #############################################################
 https://minikube.sigs.k8s.io/docs/start/
 
-minikube start --cpus=4 --memory=6g --addons=ingress
-set the alias:- alias kubectl="minikube kubectl --"
+`minikube start --cpus=4 --memory=6g --addons=ingress`
+`set the alias:- alias kubectl="minikube kubectl --"`
 
-Step3: Install AWX Operator
+#### Step3: Install AWX Operator
 #############################################################
 -------------------------------------------------------------
-file: kustomization.yaml
+###### file: kustomization.yaml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -32,10 +35,11 @@ set the default namespace:- kubectl config set-context --current --namespace=awx
 
 Step4: Install awx
 #############################################################
-update kustomization.yaml resources
+##### update kustomization.yaml resources
 
 file: awx-server.yaml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 `---
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
@@ -43,6 +47,7 @@ metadata:
   name: awx-server
 spec:
   service_type: nodeport`
+
 -------------------------------------------------------------
 Command: `kubectl apply -k .`
 -------------------------------------------------------------
