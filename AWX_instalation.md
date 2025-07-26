@@ -56,11 +56,12 @@ kind: AWX
 metadata:
   name: awx-server
 spec:
-  service_type: nodeport`
+  service_type: nodeport
 ```
 ##### update *kustomization.yaml* resources
 
 ```javascript
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -70,6 +71,7 @@ images:
   - name: quay.io/ansible/awx-operator
     newTag: 2.19.1
 namespace: awx
+
 ```
 
 ###### Once the File *kustomization.yaml* is updated the run the below Command: 
