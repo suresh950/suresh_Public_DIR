@@ -10,7 +10,7 @@ Commands:
 ## Step2: Install Minikube & start
 #############################################################
 
-https://minikube.sigs.k8s.io/docs/start/
+[https://minikube.sigs.k8s.io/docs/start/](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
 
 `minikube start --cpus=4 --memory=6g --addons=ingress`
 
