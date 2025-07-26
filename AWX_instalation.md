@@ -86,6 +86,6 @@ If you want to Check installation logs then you can run the below command:
 
 ## Step5: Enable external access
 
-```javascript
+```python
 kubectl port-forward service/awx-server-service -n awx  --address 0.0.0.0 30080:80
 ```
