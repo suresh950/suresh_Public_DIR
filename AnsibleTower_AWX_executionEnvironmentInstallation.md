@@ -1,5 +1,7 @@
 # AnsibleTower_AWX_execution Environment Installation 
 
+### execution-environment.yml
+
 ```python
 ---
 version: 3
@@ -18,4 +20,28 @@ dependencies:
   system: bindep.txt
   galaxy: requirements.yml
   python: requirements.txt
+```
+
+### requirements.txt
+
+```python
+ansible
+netmiko
+pyats
+requests
+
+```
+
+### requirements.yml
+```python
+---
+collections:
+  - name: paloaltonetworks.panos
+
+```
+
+### bindep.txt 
+```python
+git
+
 ```
