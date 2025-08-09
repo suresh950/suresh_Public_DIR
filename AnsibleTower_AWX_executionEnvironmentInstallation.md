@@ -18,4 +18,4 @@ dependencies:
   system: bindep.txt
   galaxy: requirements.yml
   python: requirements.txt
-```python
+```
