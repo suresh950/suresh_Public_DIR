@@ -63,6 +63,27 @@ collections:
 
 ### bindep.txt 
 ```python
+# For general Ansible tasks
 git
+bash
+tar
+gzip
+
+# For Python packages that need compiling (e.g., cryptography, lxml)
+gcc
+gcc-c++
+make
+libffi-devel
+openssl-devel
+
+# For network automation extras
+sshpass      # if you use password-based SSH
+iputils      # ping, etc.
+net-tools    # netstat, ifconfig, etc.
+
+# Useful troubleshooting tools
+curl
+wget
+vim
 
 ```
